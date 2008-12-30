@@ -1,0 +1,26 @@
+#include "ruby.h"
+#include "narray.h"
+
+float mul_all(float array[], int nx);
+
+VALUE wrap_mul_all(self, na)
+     VALUE self, na;
+{
+  VALUE na2;
+  struct NARRAY *n_na;
+  float result;
+
+  na2 = na_cast_object(na, NA_SFLOAT);
+  GetNArray(na2,n_na);
+  result = mul_all((float*)n_na->ptr, n_na->total);
+  return( rb_float_new(result) );
+}
+
+void Init_test()
+{
+  VALUE module;
+
+  rb_require("narray");
+  module = rb_define_module("Test");
+  rb_define_module_function(module, "mul_all", wrap_mul_all, 1);
+}
