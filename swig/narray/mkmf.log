@@ -1,0 +1,20 @@
+have_header: checking for narray.h... -------------------- yes
+
+"cc -E -I. -I/usr/lib/ruby/1.8/i486-linux -I. -I/usr/local/lib/site_ruby/1.8/i486-linux  -fno-strict-aliasing -g -g -O2  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <narray.h>
+/* end */
+
+--------------------
+
+have_header: checking for narray_config.h... -------------------- yes
+
+"cc -E -I. -I/usr/lib/ruby/1.8/i486-linux -I. -I/usr/local/lib/site_ruby/1.8/i486-linux  -fno-strict-aliasing -g -g -O2  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <narray_config.h>
+/* end */
+
+--------------------
+
